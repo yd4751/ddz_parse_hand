@@ -31,7 +31,7 @@ CParseCardsInfo& CParseCardsInfo::GetInstance()
 	return m_Parse;
 }
 
-void CParseCardsInfo::Init(const std::vector<DDZDataDefine::CardValue>& cards)
+void CParseCardsInfo::Init(const std::vector<CardValue>& cards,CardValueInfo& outCardValueInfo)
 {
 	Reset();
 	std::vector<CardValue>	handCards(cards);
@@ -85,7 +85,7 @@ void CParseCardsInfo::Init(const std::vector<DDZDataDefine::CardValue>& cards)
 	}
 	//统计时间
 	//std::cout << std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now() - start).count() << std::endl;
-
+	outCardValueInfo = allCardsValueInfo.begin()->first;
 	allCardsValueInfo.begin()->first.DumpResult();
 }
 
@@ -112,7 +112,7 @@ void CParseCardsInfo::Sort(std::vector<CardValue>& cards)
 ChildCardInfo CParseCardsInfo::FindStright(HandCardsParse& handCards, CardValue nStart, int nMaxLength)
 {
 	if(handCards.empty())
-		return ChildCardInfo(CARD_3, 0, CARD_TYPE_ERROR);
+		return ChildCardInfo(DDZ_CARD_3, 0, CARD_TYPE_ERROR);
 
 	int nCurCount = 1;
 	auto itPre = handCards.begin();
@@ -150,7 +150,7 @@ ChildCardInfo CParseCardsInfo::FindStright(HandCardsParse& handCards, CardValue 
 		return ChildCardInfo((--itNext)->first, nCurCount, CARD_TYPE_STRIGHT);
 	}
 
-	return ChildCardInfo(CARD_3, 0, CARD_TYPE_ERROR);
+	return ChildCardInfo(DDZ_CARD_3, 0, CARD_TYPE_ERROR);
 }
 ChildCardsParse  CParseCardsInfo::FindAllStright(HandCardsParse& handCards, CardValue nStart, int nMaxLength)
 {
@@ -204,7 +204,7 @@ void CParseCardsInfo::GetAllStright(HandCardsParse& handCards, ChildCardsParse& 
 	auto& inputStrights = strights[CARD_TYPE_STRIGHT];
 	while (true)
 	{
-		ChildCardInfo info = FindStright(handCards,CARD_3, 5);
+		ChildCardInfo info = FindStright(handCards, DDZ_CARD_3, 5);
 		if (info.nCount <= 0)
 			break;
 
@@ -239,7 +239,7 @@ void CParseCardsInfo::GetAllStright(HandCardsParse& handCards, ChildCardsParse& 
 void CParseCardsInfo::ParseAllIndependentCards(HandCardsParse& handCards, ChildCardsParse& chaildInfo)
 {
 	
-	ChildCardsParse maxStrightInfo = FindAllStright(handCards,CARD_3, handCards.size());
+	ChildCardsParse maxStrightInfo = FindAllStright(handCards, DDZ_CARD_3, handCards.size());
 	if (!maxStrightInfo.empty())
 	{
 		std::map<CardValue,int> vUsedCards;

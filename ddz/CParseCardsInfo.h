@@ -11,7 +11,7 @@ public:
 
 public:
 	static CParseCardsInfo& GetInstance();
-	void Init(const std::vector<DDZDataDefine::CardValue>& cards);
+	void Init(const std::vector<DDZDataDefine::CardValue>& cards, DDZDataDefine::CardValueInfo&);
 
 protected:
 	void DumpResult(const std::vector<DDZDataDefine::ChildCardInfo>& childCardInfo);

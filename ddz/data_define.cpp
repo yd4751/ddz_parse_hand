@@ -8,26 +8,26 @@ namespace DDZDataDefine
 	{
 		switch (value)
 		{
-		case CARD_NULL: return value = CARD_3;
-		case CARD_3: return value = CARD_4;
-		case CARD_4: return value = CARD_5;
-		case CARD_5: return value = CARD_6;
-		case CARD_6: return value = CARD_7;
-		case CARD_7: return value = CARD_8;
-		case CARD_8: return value = CARD_9;
-		case CARD_9: return value = CARD_10;
-		case CARD_10: return value = CARD_J;
-		case CARD_J: return value = CARD_Q;
-		case CARD_Q: return value = CARD_K;
-		case CARD_K: return value = CARD_A;
-		case CARD_A: return value = CARD_2;
-		case CARD_2: return value = CARD_BLACK;
-		case CARD_BLACK: return value = CARD_RED;
-		case CARD_RED: return value = CARD_MAX;
-		case CARD_MAX: return value = CARD_MAX;
+		case DDZ_CARD_NULL: return value = DDZ_CARD_3;
+		case DDZ_CARD_3: return value = DDZ_CARD_4;
+		case DDZ_CARD_4: return value = DDZ_CARD_5;
+		case DDZ_CARD_5: return value = DDZ_CARD_6;
+		case DDZ_CARD_6: return value = DDZ_CARD_7;
+		case DDZ_CARD_7: return value = DDZ_CARD_8;
+		case DDZ_CARD_8: return value = DDZ_CARD_9;
+		case DDZ_CARD_9: return value = DDZ_CARD_10;
+		case DDZ_CARD_10: return value = DDZ_CARD_J;
+		case DDZ_CARD_J: return value = DDZ_CARD_Q;
+		case DDZ_CARD_Q: return value = DDZ_CARD_K;
+		case DDZ_CARD_K: return value = DDZ_CARD_A;
+		case DDZ_CARD_A: return value = DDZ_CARD_2;
+		case DDZ_CARD_2: return value = DDZ_CARD_BLACK;
+		case DDZ_CARD_BLACK: return value = DDZ_CARD_RED;
+		case DDZ_CARD_RED: return value = DDZ_CARD_MAX;
+		case DDZ_CARD_MAX: return value = DDZ_CARD_MAX;
 		}
 		cout << __FUNCTION__ << ":" << __LINE__ << endl;
-		return value = CARD_NULL;
+		return value = DDZ_CARD_NULL;
 	}
 
 	//单牌基础价值
@@ -35,21 +35,21 @@ namespace DDZDataDefine
 	{
 		switch (card)
 		{
-		case CARD_3:		return -7;
-		case CARD_4:		return -6;
-		case CARD_5:		return -5;
-		case CARD_6:		return -4;
-		case CARD_7:		return -3;
-		case CARD_8:		return -2;
-		case CARD_9:		return -1;
-		case CARD_10:		return 0;
-		case CARD_J:		return 1;
-		case CARD_Q:		return 2;
-		case CARD_K:		return 3;
-		case CARD_A:		return 4;
-		case CARD_2:		return 5;
-		case CARD_BLACK:	return 6;
-		case CARD_RED:		return 7;
+		case DDZ_CARD_3:		return -7;
+		case DDZ_CARD_4:		return -6;
+		case DDZ_CARD_5:		return -5;
+		case DDZ_CARD_6:		return -4;
+		case DDZ_CARD_7:		return -3;
+		case DDZ_CARD_8:		return -2;
+		case DDZ_CARD_9:		return -1;
+		case DDZ_CARD_10:		return 0;
+		case DDZ_CARD_J:		return 1;
+		case DDZ_CARD_Q:		return 2;
+		case DDZ_CARD_K:		return 3;
+		case DDZ_CARD_A:		return 4;
+		case DDZ_CARD_2:		return 5;
+		case DDZ_CARD_BLACK:	return 6;
+		case DDZ_CARD_RED:		return 7;
 		}
 		cout << __FUNCTION__ << ":" << __LINE__ << endl;
 		return 0;

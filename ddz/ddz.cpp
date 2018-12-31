@@ -1,7 +1,6 @@
 ﻿// ddz.cpp : 此文件包含 "main" 函数。程序执行将在此处开始并结束。
 //
 
-#include "pch.h"
 #include <iostream>
 #include <vector>
 #include <map>
@@ -67,17 +66,32 @@ using namespace std::chrono;
 
 */
 
+std::string CatsCards(const std::vector<int>& cards)
+{
+	std::ostringstream str("[");
+	str << hex;
+	for(auto it : cards)
+	{
+		str << it << ",";
+	}
+	str << "]";
+	return str.str();
+}
+
 int main()
 {
 	CHandCardsInfo test;
 	//std::vector<int> cards = {0x3,0x3,0x5,0x8,0x6,0x7,0x8,0x6,0x7,0x8,0x6,0x7,0x2,0x2,};
-	std::vector<int> cards = { 0x4,0x4,0x5,0x5,0x7,0x8,0x6,0x7,0x8,0x6,0x2,0x2, };
+	std::vector<int> cards = { 0x13,0x24,0x35,0x15,0x27,0x28,0x6,0x7,0x9,0x6,0x2,0x2, };
 
 	auto start = system_clock::now();
 	test.Init(cards);
 	auto duration = duration_cast<milliseconds>(system_clock::now() - start);
 	cout << duration.count() << endl;
-
+	//ChildCardInfo out = test.GetNewOut();
+	std::vector<int> out = test.GetOutCards();
+	//cout << "[OUT]:" << out.nMaxValue << " : " << out.nCount << "  [Adds]:" << out.vAddCards.size() << endl;
+	cout << CatsCards(out) << endl;
 }
 
 

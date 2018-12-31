@@ -19,23 +19,23 @@ namespace DDZDataDefine
 	// 1~12-3~A  21-2  31-RedKing  41-BlackKing
 	enum CardValue
 	{
-		CARD_NULL = 0,
-		CARD_3 = 3,
-		CARD_4 = 4,
-		CARD_5 = 5,
-		CARD_6 = 6,
-		CARD_7 = 7,
-		CARD_8 = 8,
-		CARD_9 = 9,
-		CARD_10 = 10,
-		CARD_J = 11,
-		CARD_Q = 12,
-		CARD_K = 13,
-		CARD_A = 14,
-		CARD_2 = 21,
-		CARD_BLACK = 31,
-		CARD_RED = 41,
-		CARD_MAX = 100,
+		DDZ_CARD_NULL = 0,
+		DDZ_CARD_3 = 3,
+		DDZ_CARD_4 = 4,
+		DDZ_CARD_5 = 5,
+		DDZ_CARD_6 = 6,
+		DDZ_CARD_7 = 7,
+		DDZ_CARD_8 = 8,
+		DDZ_CARD_9 = 9,
+		DDZ_CARD_10 = 10,
+		DDZ_CARD_J = 11,
+		DDZ_CARD_Q = 12,
+		DDZ_CARD_K = 13,
+		DDZ_CARD_A = 14,
+		DDZ_CARD_2 = 21,
+		DDZ_CARD_BLACK = 31,
+		DDZ_CARD_RED = 41,
+		DDZ_CARD_MAX = 100,
 	};
 
 	//ÅÆÐÍ¶¨Òå
@@ -146,8 +146,8 @@ namespace DDZDataDefine
 			}
 			return;
 		case CARD_TYPE_ROCKET:						//»ð¼ý
-			EraseCards(handCards, CardValue::CARD_RED, 1);
-			EraseCards(handCards, CardValue::CARD_BLACK, 1);
+			EraseCards(handCards, CardValue::DDZ_CARD_RED, 1);
+			EraseCards(handCards, CardValue::DDZ_CARD_BLACK, 1);
 			return;
 		}
 	};
@@ -246,12 +246,12 @@ namespace DDZDataDefine
 			});
 
 			size_t nCurCount = 1;
-			CardValue nLastCard = CARD_NULL;
+			CardValue nLastCard = DDZ_CARD_NULL;
 			auto itCur = info[nType].begin();
 			auto itStart = itCur;
 			while (itCur != info[nType].end())
 			{
-				if (nLastCard != CARD_NULL && (nLastCard + 1 == itCur->nMaxValue))
+				if (nLastCard != DDZ_CARD_NULL && (nLastCard + 1 == itCur->nMaxValue))
 				{
 					++nCurCount;
 				}

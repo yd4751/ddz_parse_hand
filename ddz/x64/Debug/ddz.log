@@ -1,0 +1,11 @@
+﻿  CCombination.cpp
+e:\project\vs\ddz\ddz_parse_hand\ddz\ccombination.cpp(4): fatal error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  CHandCardsInfo.cpp
+e:\project\vs\ddz\ddz_parse_hand\ddz\chandcardsinfo.cpp(56): fatal error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  CParseCardsInfo.cpp
+e:\project\vs\ddz\ddz_parse_hand\ddz\cparsecardsinfo.cpp(364): fatal error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  data_define.cpp
+e:\project\vs\ddz\ddz_parse_hand\ddz\data_define.cpp(114): fatal error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  ddz.cpp
+e:\project\vs\ddz\ddz_parse_hand\ddz\ddz.cpp(85): fatal error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  正在生成代码...
